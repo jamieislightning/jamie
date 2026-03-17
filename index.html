@@ -3,21 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to My Personal Website</h1>
-    <img src="profile-picture-url.jpg" alt="Profile Picture" />
-    <h2>Links</h2>
-    <ul>
-        <li><a href="https://www.youtube.com/user/YOUR_YOUTUBE_CHANNEL">YouTube</a></li>
-        <li><a href="https://discord.gg/YOUR_DISCORD_LINK">Discord</a></li>
-    </ul>
-    <h2>Mental Health Resources</h2>
-    <ul>
-        <li><a href="https://www.mentalhealth.gov/">MentalHealth.gov</a></li>
-        <li><a href="https://www.nami.org/">NAMI</a></li>
-        <li><a href="https://www.suicidepreventionlifeline.org/">National Suicide Prevention Lifeline</a></li>
-    </ul>
+    <div class="tabs">
+        <button class="tablink" onclick="openTab(event, 'Home')">Home</button>
+        <button class="tablink" onclick="openTab(event, 'About')">About</button>
+        <button class="tablink" onclick="openTab(event, 'Social')">Social Links</button>
+        <button class="tablink" onclick="openTab(event, 'MentalHealth')">Mental Health Resources</button>
+        <button class="tablink" onclick="openTab(event, 'Gaming')">Gaming</button>
+        <button class="tablink" onclick="openTab(event, 'Contact')">Contact</button>
+    </div>
+
+    <div id="Home" class="tabcontent">
+        <h1>Welcome to My Website</h1>
+        <p>This is the homepage.</p>
+    </div>
+
+    <div id="About" class="tabcontent">
+        <h2>About Me</h2>
+        <p>Here you can find information about me.</p>
+    </div>
+
+    <div id="Social" class="tabcontent">
+        <h2>Social Links</h2>
+        <p>Follow me on <a href="https://youtube.com/@TheMinecraftRobloxGamer">YouTube</a> and <a href="https://discord.com/users/1040826006795194479">Discord</a>.</p>
+    </div>
+
+    <div id="MentalHealth" class="tabcontent">
+        <h2>Mental Health Resources</h2>
+        <p>Here are some mental health resources.</p>
+    </div>
+
+    <div id="Gaming" class="tabcontent">
+        <h2>Gaming</h2>
+        <p>Information about my gaming interests.</p>
+    </div>
+
+    <div id="Contact" class="tabcontent">
+        <h2>Contact Me</h2>
+        <p>You can reach me via Discord: jamiemcqueen378</p>
+        <img src="https://tenor.com/view/the-rookie-rookie-nolan-john-nolan-nathan-fillion-gif-300351053250759578" alt="Profile Picture">
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName('tabcontent');
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = 'none';
+            }
+            tablinks = document.getElementsByClassName('tablink');
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(' active', '');
+            }
+            document.getElementById(tabName).style.display = 'block';
+            evt.currentTarget.className += ' active';
+        }
+    </script>
 </body>
 </html>
